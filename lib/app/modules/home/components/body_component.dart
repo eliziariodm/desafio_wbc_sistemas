@@ -9,7 +9,7 @@ class BodyComponent extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        color: Theme.of(context).colorScheme.primary,
+        color: Theme.of(context).colorScheme.secondary,
       ),
       child: Container(
         decoration: BoxDecoration(
@@ -67,6 +67,13 @@ class BodyComponent extends StatelessWidget {
                       text: 'Reserva Churrasqueira',
                       onTap: () {
                         Navigator.pushNamed(context, '/rent');
+                      },
+                    ),
+                    ButtonWidget(
+                      iconData: Icons.add_shopping_cart_sharp,
+                      text: 'Itens Reservados',
+                      onTap: () {
+                        Navigator.pushNamed(context, '/reserved');
                       },
                     ),
                   ],

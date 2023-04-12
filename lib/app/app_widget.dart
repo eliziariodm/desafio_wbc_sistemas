@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import 'controllers/grills_controller.dart';
+import 'controllers/reserved_controller.dart';
 import 'modules/home/pages/home_page.dart';
 import 'modules/rent/pages/rent_page.dart';
+import 'modules/reserved/pages/reserved_page.dart';
 import 'modules/splash/pages/splash_page.dart';
 
 class AppWidget extends StatefulWidget {
@@ -21,6 +23,9 @@ class _AppWidgetState extends State<AppWidget> {
         ChangeNotifierProvider<GrillsController>(
           create: (context) => GrillsController(),
         ),
+        ChangeNotifierProvider<ReservedController>(
+          create: (context) => ReservedController(),
+        ),
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
@@ -28,11 +33,12 @@ class _AppWidgetState extends State<AppWidget> {
           '/': (_) => const SplashPage(),
           '/home': (_) => const HomePage(),
           '/rent': (_) => const RentPage(),
+          '/reserved': (_) => const ReservedPage(),
         },
         theme: ThemeData(
           colorScheme: const ColorScheme.light(
-            primary: Color(0xFF32C043),
-            secondary: Color(0xFFE9EAEB),
+            primary: Color(0xFFE9EAEB),
+            secondary: Color(0xFF32C043),
             tertiary: Color(0xFF000000),
             surface: Color(0xFFFFFFFF),
             error: Color(0xFFF03D3E),
@@ -86,6 +92,7 @@ class _AppWidgetState extends State<AppWidget> {
           ),
           appBarTheme: const AppBarTheme(
             elevation: 0,
+            centerTitle: true,
             backgroundColor: Color(0xFF32C043),
             iconTheme: IconThemeData(
               size: 35,

@@ -23,7 +23,7 @@ class ButtonWidget extends StatelessWidget {
         child: Ink(
           padding: const EdgeInsets.all(15),
           decoration: BoxDecoration(
-            color: Theme.of(context).colorScheme.secondary,
+            color: Theme.of(context).colorScheme.primary,
             borderRadius: const BorderRadius.all(
               Radius.circular(10),
             ),
@@ -32,6 +32,7 @@ class ButtonWidget extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               Icon(iconData),
+              const SizedBox(height: 5),
               Text(
                 text,
                 textAlign: TextAlign.center,

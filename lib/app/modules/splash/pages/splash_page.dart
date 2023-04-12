@@ -20,12 +20,22 @@ class _SplashPageState extends State<SplashPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Theme.of(context).colorScheme.primary,
-      body: Center(
-        child: Text(
-          'Clube.on',
-          style: Theme.of(context).textTheme.titleLarge,
-        ),
+      backgroundColor: Theme.of(context).colorScheme.secondary,
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          const SizedBox(height: 30),
+          Center(
+            child: Text(
+              'Clube.on',
+              style: Theme.of(context).textTheme.titleLarge,
+            ),
+          ),
+          const SizedBox(height: 30),
+          CircularProgressIndicator(
+            color: Theme.of(context).colorScheme.surface,
+          ),
+        ],
       ),
     );
   }

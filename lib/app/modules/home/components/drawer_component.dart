@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../widgets/exit_widget.dart';
+
 class DrawerComponent extends StatelessWidget {
   const DrawerComponent({super.key});
 
@@ -52,7 +54,12 @@ class DrawerComponent extends StatelessWidget {
                       'Sair',
                       style: Theme.of(context).textTheme.labelSmall,
                     ),
-                    onTap: () {},
+                    onTap: () {
+                      showDialog(
+                        context: context,
+                        builder: (context) => const ExitWidget(),
+                      );
+                    },
                   ),
                 ],
               ),

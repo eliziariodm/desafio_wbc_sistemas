@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import '../../../controllers/grills_controller.dart';
+import '../../../controllers/reserved_controller.dart';
 import '../components/body_component.dart';
 import '../components/drawer_component.dart';
 
@@ -16,7 +16,7 @@ class _HomePageState extends State<HomePage> {
   @override
   void initState() {
     super.initState();
-    context.read<GrillsController>().getGrills();
+    context.read<ReservedController>().openBoxReserved();
   }
 
   @override
