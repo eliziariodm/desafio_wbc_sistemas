@@ -7,7 +7,7 @@ import 'grills_hive_adapter.dart';
 
 class HiveConfig {
   static Future start() async {
-    Hive.registerAdapter(MessagesHiveAdapter());
+    Hive.registerAdapter(GrillsHiveAdapter());
     Directory dir = await getApplicationSupportDirectory();
 
     await Hive.initFlutter(dir.path);

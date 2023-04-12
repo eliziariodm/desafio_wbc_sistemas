@@ -2,7 +2,7 @@ import 'package:hive/hive.dart';
 
 import '../../data/models/grills_model.dart';
 
-class MessagesHiveAdapter extends TypeAdapter<GrillsModel> {
+class GrillsHiveAdapter extends TypeAdapter<GrillsModel> {
   @override
   final typeId = 0;
 

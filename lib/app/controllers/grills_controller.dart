@@ -1,16 +1,18 @@
 import 'package:flutter/material.dart';
 
 import '../data/models/grills_model.dart';
-import '../data/repositories/grills_repository_impl.dart';
+import '../data/repositories/get_grills_repository.dart';
 
 class GrillsController extends ChangeNotifier {
-  final repository = GrillsRepositoryImpl();
+  final GetGrillsRepository _repository;
 
   List<GrillsModel> grillsList = <GrillsModel>[];
   List<GrillsModel> auxiliaryList = <GrillsModel>[];
 
+  GrillsController(this._repository);
+
   Future<List<GrillsModel>> getGrills(String? value) async {
-    auxiliaryList = await repository.fetchGrills();
+    auxiliaryList = await _repository.getGrillsRepository();
 
     if (value != '') {
       grillsList = auxiliaryList
