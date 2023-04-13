@@ -74,7 +74,7 @@ flutter test
      <td>Reserved Page</td>
   </tr>
   <tr>
-    <td><img src="" width=270 ></td>
+    <td><img src="https://github.com/eliziariodm/desafio_wbc_sistemas/blob/main/assets/screenshots/home_page.png" width=270 ></td>
     <td><img src="" width=270 ></td>
     <td><img src="" width=270 ></td>
   </tr>
