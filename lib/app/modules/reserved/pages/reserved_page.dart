@@ -43,7 +43,7 @@ class ReservedPage extends StatelessWidget {
                         final items = reserved.reservedList[index];
 
                         return Container(
-                          height: constraints.maxWidth < 400
+                          height: constraints.maxWidth < 390
                               ? constraints.maxHeight * 0.6
                               : constraints.maxHeight * 0.35,
                           padding: const EdgeInsets.symmetric(
