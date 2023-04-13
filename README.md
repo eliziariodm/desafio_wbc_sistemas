@@ -1,16 +1,86 @@
-# desafio_wbc_sistemas
+# Desafio WBC Sistemas
 
-A new Flutter project.
+Aplicativo Mobile para o Desafio da WBC Sistemas utilizando o Fluter. O aplicativo foi feito para criar um processo de reserva de churrasqueiras, permitindo que os usuários visualizem as churrasqueiras disponíveis em tempo real e façam suas reservas de forma rápida e eficiente.
 
-## Getting Started
 
-This project is a starting point for a Flutter application.
+## Ambiente Flutter
 
-A few resources to get you started if this is your first Flutter project:
+Flutter 3.7.11 • channel stable
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+Dart 2.19.6 • channel stable
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+
+## Packages
+
+#### Os packages utilizados foram:
+
+O [Cached Network Image](https://pub.dev/packages/cached_network_image) em sua versão mais recente, usado para mostrar imagens da internet e mantê-las no diretório de cache.
+
+O [Hive](https://pub.dev/packages/hive) e o [Hive Flutter](https://pub.dev/packages/hive_flutter) em sua versão mais recente, usado para salvar os dados localmente no aparelho do usuário.
+
+O [Path Provider](https://pub.dev/packages/path_provider) na sua versão mais recente, usado para salvar os dados do Hive em uma pasta local no aplicativo Mobile.
+
+O [Provider](https://pub.dev/packages/provider) também em sua versão mais recente, usado para reatividade do estado e injeção de dependência.
+
+E o [Flutter Launcher Icons](https://pub.dev/packages/flutter_launcher_icons) também em sua versão mais recente, usado para simplificar a tarefa de atualizar o ícone do iniciador do aplicativo.
+
+
+# Instalação do projeto
+
+* Clone o projeto.
+
+* Abra o projeto através de sua IDE favorita.
+
+* Digite ou cole no terminal o código abaixo:
+
+```bash
+flutter pub get
+```
+* Após isso, já é possível debugar o projeto.
+
+* Para debugar o projeto utilize um emulador ou um celular com o modo debugar ativado.
+
+#### Testes do projeto
+
+É possível rodar os testes de duas formas, através do terminal ou debugando o teste.
+
+#### Testes no terminal
+
+* Abra o terminal do projeto.
+
+* Digite ou cole no terminal o seguinte código:
+
+```bash
+flutter test
+```
+
+#### Testes no debug
+
+* Abra a pasta test do projeto.
+
+* Abra os arquivos com o final ___test.dart__.
+
+* Clique na palavra __Run__ ou __Debug__ acima de cada teste.
+
+* Se o teste passou, aparecerá o símbolo (__✓__) seguido do que é esperado no teste.
+
+
+## Screenshots
+
+<table>
+  <tr>
+     <td>Home Page</td>
+     <td>Rent Page</td>
+     <td>Reserved Page</td>
+  </tr>
+  <tr>
+    <td><img src="" width=270 ></td>
+    <td><img src="" width=270 ></td>
+    <td><img src="" width=270 ></td>
+  </tr>
+ </table>
+
+
+### Autor
+
+### [Daniel Eliziario](https://www.linkedin.com/in/daniel-eliziario/)
