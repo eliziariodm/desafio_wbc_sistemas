@@ -4,12 +4,14 @@ class ButtonWidget extends StatelessWidget {
   final IconData iconData;
   final String text;
   final void Function()? onTap;
+  final TextOverflow? overflow;
 
   const ButtonWidget({
     super.key,
     required this.iconData,
     required this.text,
     this.onTap,
+    this.overflow,
   });
 
   @override
@@ -21,20 +23,21 @@ class ButtonWidget extends StatelessWidget {
         ),
         onTap: onTap,
         child: Ink(
-          padding: const EdgeInsets.all(15),
+          padding: const EdgeInsets.fromLTRB(15, 20, 15, 0),
           decoration: BoxDecoration(
             color: Theme.of(context).colorScheme.primary,
             borderRadius: const BorderRadius.all(
               Radius.circular(10),
             ),
           ),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          child: Wrap(
+            runSpacing: 5,
+            alignment: WrapAlignment.center,
             children: [
               Icon(iconData),
-              const SizedBox(height: 5),
               Text(
                 text,
+                overflow: overflow ?? TextOverflow.clip,
                 textAlign: TextAlign.center,
                 style: Theme.of(context).textTheme.labelSmall,
               ),

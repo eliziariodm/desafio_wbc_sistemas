@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 
 import 'controllers/grills_controller.dart';
@@ -101,6 +102,7 @@ class _AppWidgetState extends State<AppWidget> {
             color: Color(0xFF000000),
           ),
           appBarTheme: const AppBarTheme(
+            systemOverlayStyle: SystemUiOverlayStyle.light,
             elevation: 0,
             centerTitle: true,
             backgroundColor: Color(0xFF32C043),

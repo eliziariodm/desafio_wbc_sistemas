@@ -41,8 +41,11 @@ class ReservedPage extends StatelessWidget {
                       itemCount: reserved.reservedList.length,
                       itemBuilder: (context, index) {
                         final items = reserved.reservedList[index];
+
                         return Container(
-                          height: constraints.maxHeight * 0.4,
+                          height: constraints.maxWidth < 400
+                              ? constraints.maxHeight * 0.6
+                              : constraints.maxHeight * 0.35,
                           padding: const EdgeInsets.symmetric(
                             horizontal: 15,
                             vertical: 20,
@@ -89,12 +92,13 @@ class ReservedPage extends StatelessWidget {
                                   ),
                                 ),
                               ),
-                              const SizedBox(width: 10),
+                              const SizedBox(width: 5),
                               Flexible(
                                 flex: 2,
-                                child: Column(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceEvenly,
+                                child: Wrap(
+                                  runSpacing:
+                                      constraints.maxWidth < 350 ? 10 : 20,
+                                  alignment: WrapAlignment.center,
                                   children: [
                                     Text(
                                       items.product,
@@ -103,14 +107,13 @@ class ReservedPage extends StatelessWidget {
                                           .displayMedium,
                                       textAlign: TextAlign.center,
                                     ),
-                                    const SizedBox(height: 20),
                                     Text(
                                       'R\$ ${items.price}',
                                       style: Theme.of(context)
                                           .textTheme
                                           .bodyMedium,
+                                      textAlign: TextAlign.center,
                                     ),
-                                    const SizedBox(height: 20),
                                     ElevatedButton(
                                       onPressed: () {
                                         reserved.removeReserved(items);
@@ -131,6 +134,7 @@ class ReservedPage extends StatelessWidget {
                                         style: Theme.of(context)
                                             .textTheme
                                             .headlineSmall,
+                                        textAlign: TextAlign.center,
                                       ),
                                     ),
                                   ],

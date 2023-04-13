@@ -1,7 +1,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="br.com.eliziario.desafio_wbc_sistemas">
+
+   <uses-permission android:name="android.permission.INTERNET"/> 
    <application
-        android:label="desafio_wbc_sistemas"
+        android:label="Clube.on"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity
