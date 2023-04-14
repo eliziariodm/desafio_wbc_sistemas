@@ -14,17 +14,17 @@ Dart 2.19.6 • channel stable
 
 #### Os packages utilizados foram:
 
-O [Brasil Fields](https://pub.dev/packages/brasil_fields) em sua versão mais recente, usado para adicionar os padrões e formatos brasileiros nos formulários de cadastro.
+O [Brasil Fields](https://pub.dev/packages/brasil_fields) versão mais recente, usado para adicionar os padrões e formatos brasileiros nos formulários de cadastro.
 
-O [Cached Network Image](https://pub.dev/packages/cached_network_image) em sua versão mais recente, usado para mostrar imagens da internet e mantê-las no diretório de cache.
+O [Cached Network Image](https://pub.dev/packages/cached_network_image) versão mais recente, usado para mostrar imagens da internet e mantê-las no diretório de cache.
 
-O [Flutter Launcher Icons](https://pub.dev/packages/flutter_launcher_icons) em sua versão mais recente, usado para simplificar a tarefa de atualizar o ícone do iniciador do aplicativo.
+O [Flutter Launcher Icons](https://pub.dev/packages/flutter_launcher_icons) versão mais recente, usado para simplificar a tarefa de atualizar o ícone do iniciador do aplicativo.
 
-O [Hive](https://pub.dev/packages/hive) e o [Hive Flutter](https://pub.dev/packages/hive_flutter) em sua versão mais recente, usado para salvar os dados localmente no aparelho do usuário.
+O [Hive](https://pub.dev/packages/hive) e o [Hive Flutter](https://pub.dev/packages/hive_flutter) versão mais recente, usado para salvar os dados localmente no aparelho do usuário.
 
-O [Path Provider](https://pub.dev/packages/path_provider) na sua versão mais recente, usado para salvar os dados do Hive em uma pasta local no dispositivo.
+O [Path Provider](https://pub.dev/packages/path_provider) versão mais recente, usado para salvar os dados do Hive em uma pasta local no dispositivo.
 
-E o [Provider](https://pub.dev/packages/provider) em sua versão mais recente, usado para reatividade do estado e injeção de dependência.
+E o [Provider](https://pub.dev/packages/provider) versão mais recente, usado para reatividade do estado e injeção de dependência.
 
 
 # Instalação do projeto
