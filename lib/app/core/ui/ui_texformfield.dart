@@ -1,29 +1,47 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
-class TextFormFieldWidget extends StatelessWidget {
+class UiTextFormField extends StatelessWidget {
   final void Function(String)? onChanged;
+  final TextEditingController? controller;
+  final String label;
+  final TextInputType? keyboardType;
+  final String? Function(String?)? validator;
+  final List<TextInputFormatter>? inputFormatters;
+  final bool isSearch;
 
-  const TextFormFieldWidget({
+  const UiTextFormField({
     Key? key,
+    required this.label,
     this.onChanged,
+    this.controller,
+    this.keyboardType,
+    this.validator,
+    this.inputFormatters,
+    this.isSearch = true,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
       onChanged: onChanged,
+      controller: controller,
+      keyboardType: keyboardType ?? TextInputType.name,
+      inputFormatters: inputFormatters,
+      validator: validator,
       cursorColor: Theme.of(context).colorScheme.primary,
-      keyboardType: TextInputType.name,
       style: Theme.of(context).textTheme.headlineSmall,
       decoration: InputDecoration(
-        prefixIcon: Icon(
-          Icons.search,
-          color: Theme.of(context).colorScheme.primary,
-        ),
+        prefixIcon: isSearch
+            ? Icon(
+                Icons.search,
+                color: Theme.of(context).colorScheme.primary,
+              )
+            : null,
         errorStyle: const TextStyle(height: 0),
-        contentPadding: const EdgeInsets.only(),
+        contentPadding: const EdgeInsets.only(left: 10),
         label: Text(
-          'Churrasqueira ou Preço',
+          label,
           style: Theme.of(context).textTheme.titleSmall,
         ),
         border: OutlineInputBorder(

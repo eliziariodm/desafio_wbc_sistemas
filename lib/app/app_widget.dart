@@ -3,12 +3,14 @@ import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 
 import 'controllers/grills_controller.dart';
+import 'controllers/register_controller.dart';
 import 'controllers/reserved_controller.dart';
 import 'data/datasources/get_grills_datasource.dart';
 import 'data/datasources/local/get_grills_local_datasource_impl.dart';
 import 'data/repositories/get_grills_repository.dart';
 import 'data/repositories/get_grills_repository_impl.dart';
 import 'modules/home/pages/home_page.dart';
+import 'modules/register/pages/register_page.dart';
 import 'modules/rent/pages/rent_page.dart';
 import 'modules/reserved/pages/reserved_page.dart';
 import 'modules/splash/pages/splash_page.dart';
@@ -28,6 +30,9 @@ class _AppWidgetState extends State<AppWidget> {
         Provider<GetGrillsDatasource>(
           create: (context) => GetGrillsLocalDatasourceImpl(),
         ),
+        ChangeNotifierProvider<RegisterController>(
+          create: (context) => RegisterController(),
+        ),
         Provider<GetGrillsRepository>(
           create: (context) => GetGrillsRepositoryImpl(context.read()),
         ),
@@ -42,6 +47,7 @@ class _AppWidgetState extends State<AppWidget> {
         debugShowCheckedModeBanner: false,
         routes: {
           '/': (_) => const SplashPage(),
+          '/register': (_) => const RegisterPage(),
           '/home': (_) => const HomePage(),
           '/rent': (_) => const RentPage(),
           '/reserved': (_) => const ReservedPage(),

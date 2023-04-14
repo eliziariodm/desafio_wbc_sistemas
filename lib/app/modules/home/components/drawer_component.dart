@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
+import '../../../controllers/register_controller.dart';
 import '../widgets/exit_widget.dart';
 
 class DrawerComponent extends StatelessWidget {
@@ -11,56 +13,58 @@ class DrawerComponent extends StatelessWidget {
       child: SafeArea(
         child: Padding(
           padding: const EdgeInsets.fromLTRB(15, 25, 0, 0),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                'Daniel',
-                style: Theme.of(context).textTheme.displayMedium,
-              ),
-              Text(
-                'eliziariodm@gmail.com',
-                style: Theme.of(context).textTheme.displaySmall,
-              ),
-              const SizedBox(height: 20),
-              const Divider(),
-              ListTile(
-                contentPadding: const EdgeInsets.only(left: 0),
-                visualDensity: const VisualDensity(horizontal: -4),
-                leading: Icon(
-                  Icons.info_outline,
-                  size: 32,
-                  color: Theme.of(context).colorScheme.tertiary,
+          child: Consumer<RegisterController>(builder: (_, register, __) {
+            return Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  register.userList[0].name,
+                  style: Theme.of(context).textTheme.displayMedium,
                 ),
-                title: Text(
-                  'Sobre',
-                  style: Theme.of(context).textTheme.labelSmall,
+                Text(
+                  register.userList[0].email,
+                  style: Theme.of(context).textTheme.displaySmall,
                 ),
-                onTap: () {},
-              ),
-              const Spacer(),
-              const Divider(),
-              ListTile(
-                contentPadding: const EdgeInsets.only(left: 0),
-                visualDensity: const VisualDensity(horizontal: -4),
-                leading: Icon(
-                  Icons.logout,
-                  size: 32,
-                  color: Theme.of(context).colorScheme.tertiary,
+                const SizedBox(height: 20),
+                const Divider(),
+                ListTile(
+                  contentPadding: const EdgeInsets.only(left: 0),
+                  visualDensity: const VisualDensity(horizontal: -4),
+                  leading: Icon(
+                    Icons.info_outline,
+                    size: 32,
+                    color: Theme.of(context).colorScheme.tertiary,
+                  ),
+                  title: Text(
+                    'Sobre',
+                    style: Theme.of(context).textTheme.labelSmall,
+                  ),
+                  onTap: () {},
                 ),
-                title: Text(
-                  'Sair',
-                  style: Theme.of(context).textTheme.labelSmall,
+                const Spacer(),
+                const Divider(),
+                ListTile(
+                  contentPadding: const EdgeInsets.only(left: 0),
+                  visualDensity: const VisualDensity(horizontal: -4),
+                  leading: Icon(
+                    Icons.logout,
+                    size: 32,
+                    color: Theme.of(context).colorScheme.tertiary,
+                  ),
+                  title: Text(
+                    'Sair',
+                    style: Theme.of(context).textTheme.labelSmall,
+                  ),
+                  onTap: () {
+                    showDialog(
+                      context: context,
+                      builder: (context) => const ExitWidget(),
+                    );
+                  },
                 ),
-                onTap: () {
-                  showDialog(
-                    context: context,
-                    builder: (context) => const ExitWidget(),
-                  );
-                },
-              ),
-            ],
-          ),
+              ],
+            );
+          }),
         ),
       ),
     );

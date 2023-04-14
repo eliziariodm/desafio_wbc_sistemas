@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
+import '../../../controllers/register_controller.dart';
 import '../widgets/button_widget.dart';
 
 class BodyComponent extends StatelessWidget {
@@ -27,10 +29,12 @@ class BodyComponent extends StatelessWidget {
             physics: const NeverScrollableScrollPhysics(),
             padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 30),
             children: [
-              Text(
-                'Olá, Daniel',
-                style: Theme.of(context).textTheme.bodyMedium,
-              ),
+              Consumer<RegisterController>(builder: (_, register, __) {
+                return Text(
+                  'Olá, ${register.userList[0].name}',
+                  style: Theme.of(context).textTheme.bodyMedium,
+                );
+              }),
               const SizedBox(height: 6),
               Text(
                 'Estamos felizes em ter você aqui!',
@@ -69,7 +73,7 @@ class BodyComponent extends StatelessWidget {
                       ),
                       ButtonWidget(
                         iconData: Icons.outdoor_grill,
-                        text: 'Reserva Churrasqueira',
+                        text: 'Reservar Churrasqueira',
                         onTap: () {
                           Navigator.pushNamed(context, '/rent');
                         },

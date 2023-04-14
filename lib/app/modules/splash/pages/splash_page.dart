@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+
+import '../../../controllers/register_controller.dart';
 
 class SplashPage extends StatefulWidget {
   const SplashPage({super.key});
@@ -12,9 +15,15 @@ class _SplashPageState extends State<SplashPage> {
   void initState() {
     super.initState();
 
-    Future.delayed(const Duration(seconds: 1)).then(
-      (value) => Navigator.pushReplacementNamed(context, '/home'),
-    );
+    context.read<RegisterController>().openBoxRegister();
+
+    Future.delayed(const Duration(seconds: 1)).then((value) {
+      if (context.read<RegisterController>().clickSingleRegister == 0) {
+        Navigator.pushReplacementNamed(context, '/register');
+      } else {
+        Navigator.pushReplacementNamed(context, '/home');
+      }
+    });
   }
 
   @override

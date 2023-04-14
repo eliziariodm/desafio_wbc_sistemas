@@ -4,8 +4,8 @@ import 'package:provider/provider.dart';
 
 import '../../../controllers/grills_controller.dart';
 import '../../../controllers/reserved_controller.dart';
+import '../../../core/ui/ui_texformfield.dart';
 import '../../../core/utils/debouncer.dart';
-import '../widgets/texformfield_widget.dart';
 
 class RentPage extends StatefulWidget {
   const RentPage({Key? key}) : super(key: key);
@@ -32,7 +32,8 @@ class _RentPageState extends State<RentPage> {
         return Scaffold(
           appBar: AppBar(
             toolbarHeight: 100,
-            title: TextFormFieldWidget(
+            title: UiTextFormField(
+              label: 'Churrasqueira ou Preço',
               onChanged: ((value) {
                 debouncer(() => grills.getGrills(value));
               }),
