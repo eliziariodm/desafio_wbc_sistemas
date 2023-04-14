@@ -43,9 +43,7 @@ class ReservedPage extends StatelessWidget {
                         final items = reserved.reservedList[index];
 
                         return Container(
-                          height: constraints.maxWidth < 390
-                              ? constraints.maxHeight * 0.6
-                              : constraints.maxHeight * 0.35,
+                          height: 250,
                           padding: const EdgeInsets.symmetric(
                             horizontal: 15,
                             vertical: 20,
@@ -97,7 +95,7 @@ class ReservedPage extends StatelessWidget {
                                 flex: 2,
                                 child: Wrap(
                                   runSpacing:
-                                      constraints.maxWidth < 350 ? 10 : 20,
+                                      constraints.maxWidth < 400 ? 10 : 20,
                                   alignment: WrapAlignment.center,
                                   children: [
                                     Text(
@@ -121,7 +119,9 @@ class ReservedPage extends StatelessWidget {
                                       style: ButtonStyle(
                                         padding: MaterialStateProperty.all<
                                             EdgeInsets>(
-                                          const EdgeInsets.all(13),
+                                          EdgeInsets.all(
+                                            constraints.maxWidth < 400 ? 5 : 13,
+                                          ),
                                         ),
                                         backgroundColor:
                                             MaterialStateProperty.all<Color>(

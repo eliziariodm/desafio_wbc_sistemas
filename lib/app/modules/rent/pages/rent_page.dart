@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -50,10 +52,10 @@ class _RentPageState extends State<RentPage> {
               itemBuilder: (context, index) {
                 final grill = grills.grillsList[index];
 
+                log('width ${constraints.maxWidth}');
+
                 return Container(
-                  height: constraints.maxWidth < 390
-                      ? constraints.maxHeight * 0.6
-                      : constraints.maxHeight * 0.35,
+                  height: 250,
                   padding: const EdgeInsets.symmetric(
                     horizontal: 15,
                     vertical: 20,
@@ -99,7 +101,7 @@ class _RentPageState extends State<RentPage> {
                       Flexible(
                         flex: 2,
                         child: Wrap(
-                          runSpacing: constraints.maxWidth < 350 ? 10 : 20,
+                          runSpacing: constraints.maxWidth < 400 ? 10 : 20,
                           alignment: WrapAlignment.center,
                           children: [
                             Text(
@@ -118,7 +120,9 @@ class _RentPageState extends State<RentPage> {
                               },
                               style: ButtonStyle(
                                 padding: MaterialStateProperty.all<EdgeInsets>(
-                                  const EdgeInsets.all(13),
+                                  EdgeInsets.all(
+                                    constraints.maxWidth < 400 ? 5 : 13,
+                                  ),
                                 ),
                                 backgroundColor: reservedController.reservedList
                                         .any((items) => items.id == grill.id)
