@@ -31,19 +31,19 @@ class _RegisterPageState extends State<RegisterPage> {
       backgroundColor: Theme.of(context).colorScheme.secondary,
       body: LayoutBuilder(
         builder: (context, constraints) {
-          return Container(
-            height: constraints.maxHeight,
-            width: constraints.maxWidth,
-            padding: const EdgeInsets.symmetric(horizontal: 30),
-            child: Form(
-              key: _formKey,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
+          return Form(
+            key: _formKey,
+            child: Center(
+              child: ListView(
+                shrinkWrap: true,
+                padding: const EdgeInsets.symmetric(horizontal: 30),
                 children: [
-                  Text(
-                    'Cadastramento',
-                    style: Theme.of(context).textTheme.titleLarge,
+                  Center(
+                    child: Text(
+                      'Cadastramento',
+                      style: Theme.of(context).textTheme.titleLarge,
+                      textAlign: TextAlign.center,
+                    ),
                   ),
                   const SizedBox(height: 50),
                   Text(
@@ -55,6 +55,7 @@ class _RegisterPageState extends State<RegisterPage> {
                     controller: nameTextController,
                     isSearch: false,
                     label: 'Nome Completo',
+                    textCapitalization: TextCapitalization.words,
                     validator: (value) {
                       if (value!.isEmpty) {
                         return "Digite seu Nome Completo!";
@@ -104,11 +105,12 @@ class _RegisterPageState extends State<RegisterPage> {
                       onPressed: () {
                         if (_formKey.currentState!.validate()) {
                           Navigator.pushReplacementNamed(context, '/home');
+                          register.createUser(
+                            fullName: nameTextController.text,
+                            email: emailTextController.text,
+                          );
+                          register.singleRegister();
                         }
-                        register.createUser(
-                          fullName: nameTextController.text,
-                          email: emailTextController.text,
-                        );
                       },
                       style: ButtonStyle(
                         backgroundColor: MaterialStateProperty.all<Color>(

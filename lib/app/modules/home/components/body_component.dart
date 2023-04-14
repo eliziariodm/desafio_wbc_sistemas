@@ -31,7 +31,7 @@ class BodyComponent extends StatelessWidget {
             children: [
               Consumer<RegisterController>(builder: (_, register, __) {
                 return Text(
-                  'Olá, ${register.userList[0].name}',
+                  'Olá, ${register.userModel.name}',
                   style: Theme.of(context).textTheme.bodyMedium,
                 );
               }),

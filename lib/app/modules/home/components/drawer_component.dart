@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 
 import '../../../controllers/register_controller.dart';
 import '../widgets/exit_widget.dart';
+import '../widgets/remove_user_widget.dart';
 
 class DrawerComponent extends StatelessWidget {
   const DrawerComponent({super.key});
@@ -18,11 +19,11 @@ class DrawerComponent extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  register.userList[0].name,
+                  register.userModel.name,
                   style: Theme.of(context).textTheme.displayMedium,
                 ),
                 Text(
-                  register.userList[0].email,
+                  register.userModel.email,
                   style: Theme.of(context).textTheme.displaySmall,
                 ),
                 const SizedBox(height: 20),
@@ -31,15 +32,25 @@ class DrawerComponent extends StatelessWidget {
                   contentPadding: const EdgeInsets.only(left: 0),
                   visualDensity: const VisualDensity(horizontal: -4),
                   leading: Icon(
-                    Icons.info_outline,
+                    Icons.delete_forever_rounded,
                     size: 32,
                     color: Theme.of(context).colorScheme.tertiary,
                   ),
                   title: Text(
-                    'Sobre',
+                    'Remover usuário',
                     style: Theme.of(context).textTheme.labelSmall,
                   ),
-                  onTap: () {},
+                  onTap: () {
+                    showDialog(
+                      context: context,
+                      builder: (context) => RemoveUserWidget(
+                        onPressedRemoveUser: () {
+                          register.removeUser();
+                          Navigator.pushReplacementNamed(context, '/register');
+                        },
+                      ),
+                    );
+                  },
                 ),
                 const Spacer(),
                 const Divider(),

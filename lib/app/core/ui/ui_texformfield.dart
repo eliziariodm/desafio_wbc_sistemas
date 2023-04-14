@@ -8,6 +8,7 @@ class UiTextFormField extends StatelessWidget {
   final TextInputType? keyboardType;
   final String? Function(String?)? validator;
   final List<TextInputFormatter>? inputFormatters;
+  final TextCapitalization? textCapitalization;
   final bool isSearch;
 
   const UiTextFormField({
@@ -18,6 +19,7 @@ class UiTextFormField extends StatelessWidget {
     this.keyboardType,
     this.validator,
     this.inputFormatters,
+    this.textCapitalization,
     this.isSearch = true,
   }) : super(key: key);
 
@@ -27,6 +29,7 @@ class UiTextFormField extends StatelessWidget {
       onChanged: onChanged,
       controller: controller,
       keyboardType: keyboardType ?? TextInputType.name,
+      textCapitalization: textCapitalization ?? TextCapitalization.none,
       inputFormatters: inputFormatters,
       validator: validator,
       cursorColor: Theme.of(context).colorScheme.primary,
